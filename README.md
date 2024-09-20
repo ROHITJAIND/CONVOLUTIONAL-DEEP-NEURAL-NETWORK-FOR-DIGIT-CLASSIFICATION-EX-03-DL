@@ -75,17 +75,22 @@ np.argmax(model.predict(img_28_gray_scaled.reshape(1,28,28,1)),axis=1)
 
 ### Training Loss, Validation Loss Vs Iteration Plot
 
-![download](https://github.com/user-attachments/assets/5431bfaa-1667-4f18-a6b3-6c2edddbadee)
-![download](https://github.com/user-attachments/assets/52a0cef9-d003-45d6-8fc8-191b2a860242)
+<img height=15% width=48% src="https://github.com/user-attachments/assets/5431bfaa-1667-4f18-a6b3-6c2edddbadee"><img height=15% width=48% src="https://github.com/user-attachments/assets/52a0cef9-d003-45d6-8fc8-191b2a860242">
 
+
+<table>
+<tr>
+<td width=48%>
+  
 ### Classification Report
-
 ![image](https://github.com/user-attachments/assets/8cd77ce6-26a2-48da-ac20-f9f637518bf3)
-
+</td> 
+<td valign=top>
 
 ### Confusion Matrix
-
-![image](https://github.com/user-attachments/assets/51f3cea9-2d97-49bb-9423-c4103ec16373)
+![image](https://github.com/user-attachments/assets/51f3cea9-2d97-49bb-9423-c4103ec16373)</td>
+</tr> 
+</table>
 
 
 ### New Sample Data Prediction
