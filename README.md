@@ -12,10 +12,9 @@ To Develop a convolutional deep neural network for digit classification and to v
 
 ### Neural Network Model
 
-![image](https://github.com/user-attachments/assets/09c700c3-1ac5-44c2-aff2-6bec1e4e0478)
+<img height=25% src="https://github.com/user-attachments/assets/09c700c3-1ac5-44c2-aff2-6bec1e4e0478">
 
-
-## DESIGN STEPS
+### DESIGN STEPS
 - **Step 1:** Import tensorflow and preprocessing libraries
 - **Step 2:** Download and load the dataset
 - **Step 3:** Scale the dataset between it's min and max values
@@ -96,7 +95,7 @@ np.argmax(model.predict(img_28_gray_scaled.reshape(1,28,28,1)),axis=1)
 
 ### New Sample Data Prediction
 
-![image](https://github.com/user-attachments/assets/454f1f51-75a3-4be5-9ab8-5e65a628b160)
+<img height=20% src="https://github.com/user-attachments/assets/454f1f51-75a3-4be5-9ab8-5e65a628b160">
 
 
 ### RESULT
