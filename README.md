@@ -1,30 +1,37 @@
 # EX-03 Convolutional Deep Neural Network for Digit Classification
 
 ### Aim:
+<table>
+<tr>
+<td width=80%>
+  
 To Develop a convolutional deep neural network for digit classification and to verify the response for scanned handwritten images.
 
-### Problem Statement and Dataset
 
-- Digit classification and to verify the response for scanned handwritten images.
-- The MNIST dataset is a collection of handwritten digits.
-- The task is to classify a given image of a handwritten digit into one of 10 classes representing integer values from 0 to 9, inclusively.
-- The dataset has a collection of 60,000 handwrittend digits of size 28 X 28. Here we build a convolutional neural network model that is able to classify to it's appropriate numerical value.
+</td> 
+<td valign=top>
+
+**DATE: 23.09.2024**
+
+</td>
+</tr> 
+</table>
+
+### Problem Statement and Dataset
+Digit classification and to verify the response for scanned handwritten images.The MNIST dataset is a collection of handwritten digits.The task is to classify a given image of a handwritten digit into one of 10 classes representing integer values from 0 to 9, inclusively.The dataset has a collection of 60,000 handwrittend digits of size 28 X 28. Here we build a convolutional neural network model that is able to classify to it's appropriate numerical value.
+
 
 ### Neural Network Model
 
-<img height=25% src="https://github.com/user-attachments/assets/09c700c3-1ac5-44c2-aff2-6bec1e4e0478">
+<img height=15% src="https://github.com/user-attachments/assets/daebdd33-6aba-41a0-bcb1-87145a520591">
+
 
 ### DESIGN STEPS
-- **Step 1:** Import tensorflow and preprocessing libraries
-- **Step 2:** Download and load the dataset
-- **Step 3:** Scale the dataset between it's min and max values
-- **Step 4:** Using one hot encode, encode the categorical values
-- **Step 5:** Split the data into train and test
-- **Step 6:** Build the convolutional neural network model
-- **Step 7:** Train the model with the training data
-- **Step 8:** Plot the performance plot
-- **Step 9:** Evaluate the model with the testing data
-- **Step 10:** Fit the model and predict the single input
+- **Step 1:** Import tensorflow and preprocessing libraries,Download and load the dataset
+- **Step 2:** Scale the dataset between it's min and max values, Using one hot encode, encode the categorical values
+- **Step 3:** Split the data into train and test, Build the convolutional neural network model
+- **Step 4:** Train the model with the training data, Plot the performance plot
+- **Step 5:** Evaluate the model with the testing data, Fit the model and predict the single input
 ### Program:
 ```Python
 import numpy as np
@@ -44,15 +51,11 @@ ytren = utils.to_categorical(ytrain,10)
 yteen = utils.to_categorical(ytest,10)
 xtrainS = xtrainS.reshape(-1,28,28,1)
 xtestS = xtestS.reshape(-1,28,28,1)
-model = keras.Sequential()
-model.add(layers.Input (shape=(28,28,1)))
-model.add(layers.Conv2D (filters=32, kernel_size=(7,7), activation='relu'))
-model.add(layers.MaxPool2D (pool_size=(3,3)))
-model.add(layers.Flatten())
-model.add(layers.Dense (32, activation='relu'))
-model.add(layers.Dense (16, activation='relu'))
-model.add(layers.Dense (8, activation='relu'))
-model.add(layers.Dense (10, activation='softmax'))
+model = models.Sequential([layers.Input(shape=(28, 28, 1)),
+        layers.Conv2D(filters=32, kernel_size=(7, 7), activation='relu'),
+        layers.MaxPool2D(pool_size=(3, 3)), layers.Flatten(),
+        layers.Dense(32, activation='relu'), layers.Dense(16, activation='relu'),
+        layers.Dense(8, activation='relu'), layers.Dense(10, activation='softmax')])
 model.summary()
 model.compile(optimizer='Adam',loss='categorical_crossentropy',metrics=['accuracy'])
 model.fit(xtrainS,ytren,epochs=15,batch_size=256,validation_data=(xtestS,yteen))
